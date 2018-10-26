@@ -21,7 +21,7 @@
 				if (this.name.trim() === '') return
 				//先排序获取数组中最大的id
 				this.dataList.sort((a, b) => { return a.id - b.id })
-				this.dataList.push({ id: this.dataList[this.dataList.length - 1].id + 1, content: this.name, isFinish: false })
+				this.dataList.push({ id: this.dataList.length ? this.dataList.sort((a, b) => a.id - b.id)[this.dataList.length - 1]['id'] + 1 : 1, content: this.name, isFinish: false })
 				this.name = ''
 			},
 			//根据索引删除数据
